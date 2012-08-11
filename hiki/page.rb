@@ -75,6 +75,7 @@ module Hiki
       @headers.update( headers ) if headers
       response = Hiki::Response.new(@body, 200, @headers)
       if Object.const_defined?(:Rack)
+        puts $LOADED_FEATURES
         p ["Hiki::Response == Rack::Response", Hiki::Response == Rack::Response]
         cookies = @headers.delete('cookie')
         if cookies
